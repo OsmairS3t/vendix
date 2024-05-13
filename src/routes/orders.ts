@@ -2,7 +2,6 @@ import fastify, { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 import { knex } from '../database'
 import { z } from 'zod'
 
-
 export async function orderRoutes(app: FastifyInstance) {
   app.get('/', async () => {
     const orders = [

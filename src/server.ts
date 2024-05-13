@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify'
 import { orderRoutes } from './routes/orders'
 import { productRoutes } from './routes/products'
+import { userRoutes } from './routes/users'
 
 const fastify: FastifyInstance = Fastify({logger: true})
 
@@ -18,6 +19,10 @@ const opts: RouteShorthandOptions = {
     }
   }
 }
+
+fastify.register(userRoutes, {
+  prefix: 'users',
+})
 
 fastify.register(productRoutes, {
   prefix: 'products',
